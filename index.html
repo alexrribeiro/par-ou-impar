@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou ímpar?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="box-opcoes" id="par-ou-impar">
+            <h2 class="mensagem">Par ou ímpar?</h2>
+            <button class="botao botao-std botao-pi" id="bp" onclick="escolherParOuImpar(0); selecionar(id)">Par</button>
+            <button class="botao botao-std botao-pi" id="bi" onclick="escolherParOuImpar(1); selecionar(id)">Ímpar</button>
+        </div>
+        <div class="box-opcoes" id="escolha-nums">
+            <h2 class="mensagem">Agora escolha um número:</h2>
+            <button class="botao botao-std botao-num" id="b0" onclick="escolherNumero(0); selecionar(id)">0</button>
+            <button class="botao botao-std botao-num" id="b1" onclick="escolherNumero(1); selecionar(id)">1</button>
+            <button class="botao botao-std botao-num" id="b2" onclick="escolherNumero(2); selecionar(id)">2</button>
+            <button class="botao botao-std botao-num" id="b3" onclick="escolherNumero(3); selecionar(id)">3</button>
+            <button class="botao botao-std botao-num" id="b4" onclick="escolherNumero(4); selecionar(id)">4</button>
+            <button class="botao botao-std botao-num" id="b5" onclick="escolherNumero(5); selecionar(id)">5</button>
+        </div>
+        <div>
+            <button class="botao-acao botao-jogar" onclick="jogarParOuImpar()">Jogar!</button>
+        </div>
+        <div class="resultado">
+            &nbsp;
+        </div>
+        <button class="botao-acao botao-jogar-novamente" onclick="jogarNovamente()">Jogar novamente</button>
+    </main>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+</html>

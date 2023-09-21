@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: navy;
+    color: gold;
+    font-family: sans-serif;
+}
+
+.box-opcoes {
+    margin: 1rem auto;
+}
+
+#escolha-nums {
+    display: none;
+}
+
+.botao {
+    font-size: 1.25rem;
+    background-color: transparent;
+    padding: 0.625rem;
+    cursor: pointer;
+}
+
+.botao-std {
+    color: red;
+    border: 1px solid red;
+}
+
+.botao-std:hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.botao-pi {
+    width: 10rem;
+}
+
+.botao-num {
+    width: 3rem;
+}
+
+.botao-acao {
+    color: gold;
+    background-color: transparent;
+    padding: 0.625rem;
+    font-size: 1.5rem;
+    border: 1px solid gold;
+}
+
+.botao-acao:hover {
+    background-color: gold;
+    color: #333;
+}
+
+.botao-jogar-novamente {
+    display: none;
+}
+
+.desabilitado {
+    color: gray;
+    border: 1px solid gray;
+    cursor: default;
+}
+
+.selecionado {
+    color: #333;
+    background-color: gold;
+    border: 1px solid gold;
+}
+
+.resultado {
+    display: none;
+}
