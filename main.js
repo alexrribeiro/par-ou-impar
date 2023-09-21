@@ -102,13 +102,20 @@ function jogarParOuImpar() {
         alert('Escolha um número!')
     }
     else {
+        painel2.style.display = 'none'
+        resultado.innerHTML = "<h2 class='mensagem centralizado'>Resultado:</h2>"
         parOuImparTexto = gerarTextoEscolhaUsuario()
         escolherNumeroComputador()
         nomeVencedor = verificarVencedor()
         console.log(nomeVencedor + " venceu!")
-        mensagem = '<p>Par ou ímpar?: ' + parOuImparTexto + '</p><p>Você escolheu: ' + numeroUsuario
-        + '</p><p>Computador escolheu: ' + numeroComputador + '</p><p>Vencedor: ' + vencedor + "</p>"
-        resultado.innerHTML = mensagem
+        
+        mensagem = '<p><strong>Par ou ímpar?:</strong> ' + parOuImparTexto + 
+        '</p><p><strong>Você escolheu:</strong> ' + numeroUsuario + 
+        '</p><p><strong>Computador escolheu:</strong> ' + numeroComputador + 
+        "</p>"
+        
+        resultado.innerHTML += mensagem
+        resultado.innerHTML += vencedor == "Usuário" ? "<p class='vencedor'>Parabéns! você venceu!</p>" : "<p class='vencedor'>Que pena! Você perdeu!</p>"
         resultado.style.display = 'block'
         botaoJogar.style.display = 'none'
         botaoJogarNovamente.style.display = 'block'
@@ -117,9 +124,9 @@ function jogarParOuImpar() {
 
 function jogarNovamente() {
     tirarSelecao()
-    painel1.style.display = 'block' // Exibe o painel que pergunta par ou impar
-    painel2.style.display = 'none' // Oculta o painel para escolher numeros
+    painel1.style.display = 'block'
     botaoJogar.style.display = 'block'
     botaoJogarNovamente.style.display = 'none'
+    resultado.innerHTML = ""
     habilitarBotoes()
 }

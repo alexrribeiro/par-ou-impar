@@ -3,13 +3,29 @@
 }
 
 body {
+    margin: 0;
     background-color: navy;
     color: gold;
-    font-family: sans-serif;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 1.25rem;
+}
+
+main {
+    border: 1px solid magenta;
+    width: 50%;
+    /* height: calc(100vh - 1.25rem); */
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0.625rem;
+}
+
+.mensagem {
+    font-size: 3rem;
 }
 
 .box-opcoes {
     margin: 1rem auto;
+    text-align: center;
 }
 
 #escolha-nums {
@@ -17,15 +33,16 @@ body {
 }
 
 .botao {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     background-color: transparent;
     padding: 0.625rem;
     cursor: pointer;
+    font-family: 'Shantell Sans', sans-serif;
 }
 
 .botao-std {
     color: red;
-    border: 1px solid red;
+    border: 2px solid red;
 }
 
 .botao-std:hover {
@@ -38,7 +55,7 @@ body {
 }
 
 .botao-num {
-    width: 3rem;
+    width: 4rem;
 }
 
 .botao-acao {
@@ -46,7 +63,9 @@ body {
     background-color: transparent;
     padding: 0.625rem;
     font-size: 1.5rem;
-    border: 1px solid gold;
+    border: 2px solid gold;
+    font-family: 'Shantell Sans', sans-serif;
+    cursor: pointer;
 }
 
 .botao-acao:hover {
@@ -58,18 +77,32 @@ body {
     display: none;
 }
 
+#btn-jogar, #btn-jogar-novamente {
+    margin: 0 auto;
+}
+
 .desabilitado {
     color: gray;
-    border: 1px solid gray;
+    border: 2px solid gray;
     cursor: default;
 }
 
 .selecionado {
     color: #333;
     background-color: gold;
-    border: 1px solid gold;
+    border: 2px solid gold;
 }
 
 .resultado {
     display: none;
+}
+
+.centralizado {
+    text-align: center;
+}
+
+.vencedor {
+    font-weight: 500;
+    text-align: center;
+    font-size: 2.5rem;
 }
