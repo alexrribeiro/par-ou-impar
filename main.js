@@ -3,8 +3,6 @@ console.log("Está funcionando!")
 const resultado = document.querySelector('.resultado')
 const painel1 = document.querySelector('#par-ou-impar')
 const painel2 = document.querySelector('#escolha-nums')
-const todosBotoesPI = document.querySelectorAll('.botao-pi')
-const todosBotoesNum = document.querySelectorAll('.botao-num')
 const botaoJogar = document.querySelector('.botao-jogar')
 const botaoJogarNovamente = document.querySelector('.botao-jogar-novamente')
 
@@ -12,11 +10,13 @@ const botaoJogarNovamente = document.querySelector('.botao-jogar-novamente')
 parOuImpar = -1
 numeroUsuario = -1
 
+// Indica que o botão foi selecionado, alterando sua cor
 function selecionar(id) {
     const botao = document.getElementById(id)
     botao.classList.add('selecionado')
 }
 
+// Reseta o estado dos botões
 function tirarSelecao() {
     document.getElementById('bp').classList.remove('selecionado')
     document.getElementById('bi').classList.remove('selecionado')
@@ -35,6 +35,7 @@ function escolherParOuImpar(parOuImpar) {
     return parOuImpar
 }
 
+// Converte o número em texto para ser exibido no resultado final do jogo
 function gerarTextoEscolhaUsuario() {
     if (parOuImpar == 0) {
         textoParOuImpar = "Par"
@@ -60,22 +61,26 @@ function escolherNumeroComputador() {
     return numeroComputador
 }
 
+// Reset para habilitar novamente os botões dos números
 function habilitarBotoes() {
     for(i = 0; i <= 5; i++) {
-        // document.getElementById('b' + i).setAttribute('disabled', false)
+        document.getElementById('b' + i).removeAttribute('disabled')
         document.getElementById('b' + i).classList.add('botao-std')
         document.getElementById('b' + i).classList.remove('desabilitado')
     }
 }
 
+
+// Desabilitar os botões dos números
 function desabilitarBotoes() {
     for(i = 0; i <= 5; i++) {
-        // document.getElementById('b' + i).setAttribute('disabled', true)
+        document.getElementById('b' + i).setAttribute('disabled', true)
         document.getElementById('b' + i).classList.remove('botao-std')
         document.getElementById('b' + i).classList.add('desabilitado')
     }
 }
 
+// Verifica quem foi o vencedor
 function verificarVencedor() {
     console.log('Par ou ímpar? ' + parOuImpar)
     console.log('Escolha usuario: '+ numeroUsuario)
@@ -90,7 +95,7 @@ function verificarVencedor() {
     return vencedor
 }
 
-// O jogo entra aqui
+// Lógica principal do jogo
 function jogarParOuImpar() {
     console.log('Par ou ímpar? ' + parOuImpar)
     console.log('Escolha usuario : ' + numeroUsuario)
@@ -101,6 +106,7 @@ function jogarParOuImpar() {
     else if (numeroUsuario == -1) {
         alert('Escolha um número!')
     }
+    //Se ele escolher...
     else {
         painel2.style.display = 'none'
         resultado.innerHTML = "<h2 class='mensagem centralizado'>Resultado:</h2>"
@@ -123,6 +129,8 @@ function jogarParOuImpar() {
 }
 
 function jogarNovamente() {
+    parOuImpar = -1
+    numeroUsuario = -1
     tirarSelecao()
     painel1.style.display = 'block'
     botaoJogar.style.display = 'block'

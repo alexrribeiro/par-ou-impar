@@ -11,8 +11,7 @@ body {
 }
 
 main {
-    border: 1px solid magenta;
-    width: 50%;
+    /* border: 1px solid magenta; */
     /* height: calc(100vh - 1.25rem); */
     height: 100vh;
     margin: 0 auto;
@@ -55,7 +54,7 @@ main {
 }
 
 .botao-num {
-    width: 4rem;
+    width: 3.5rem;
 }
 
 .botao-acao {
