@@ -6,6 +6,11 @@ const painel2 = document.querySelector('#escolha-nums')
 const botaoJogar = document.querySelector('.botao-jogar')
 const botaoJogarNovamente = document.querySelector('.botao-jogar-novamente')
 
+const exibicaoParImpar = document.querySelector('#escolha-pi')
+const exibicaoNumeroUsuario = document.querySelector('#escolha-nu')
+const exibicaoNumeroComputador = document.querySelector('#escolha-nc')
+const exibicaoVencdedor = document.querySelector('#exibicao-vencedor')
+
 // Inicializamos as variáveis com -1 para o caso do usuário clicar em jogar direto
 parOuImpar = -1
 numeroUsuario = -1
@@ -109,19 +114,16 @@ function jogarParOuImpar() {
     //Se ele escolher...
     else {
         painel2.style.display = 'none'
-        resultado.innerHTML = "<h2 class='mensagem centralizado'>Resultado:</h2>"
+        // resultado.innerHTML = "<h2 class='mensagem centralizado'>Resultado:</h2>"
         parOuImparTexto = gerarTextoEscolhaUsuario()
         escolherNumeroComputador()
         nomeVencedor = verificarVencedor()
         console.log(nomeVencedor + " venceu!")
-        
-        mensagem = '<p><strong>Par ou ímpar?:</strong> ' + parOuImparTexto + 
-        '</p><p><strong>Você escolheu:</strong> ' + numeroUsuario + 
-        '</p><p><strong>Computador escolheu:</strong> ' + numeroComputador + 
-        "</p>"
-        
-        resultado.innerHTML += mensagem
-        resultado.innerHTML += vencedor == "Usuário" ? "<p class='vencedor'>Parabéns! você venceu!</p>" : "<p class='vencedor'>Que pena! Você perdeu!</p>"
+
+        exibicaoParImpar.innerHTML += '<div class="texto-exibicao">' + parOuImparTexto + '</div>'
+        exibicaoNumeroUsuario.innerHTML += '<div class="numero-exibicao">' + numeroUsuario + '</div>'
+        exibicaoNumeroComputador.innerHTML += '<div class="numero-exibicao">' + numeroComputador + '</div>'
+        exibicaoVencdedor.innerHTML = vencedor == "Usuário" ? "<p class='vencedor voce-venceu'>Parabéns! você venceu!</p>" : "<p class='vencedor voce-perdeu'>Que pena! Você perdeu!</p>"
         resultado.style.display = 'block'
         botaoJogar.style.display = 'none'
         botaoJogarNovamente.style.display = 'block'
@@ -135,6 +137,11 @@ function jogarNovamente() {
     painel1.style.display = 'block'
     botaoJogar.style.display = 'block'
     botaoJogarNovamente.style.display = 'none'
-    resultado.innerHTML = ""
+
+    exibicaoParImpar.innerHTML = '<div class="titulo-cartao-escolha">Par ou ímpar?</div>'
+    exibicaoNumeroUsuario.innerHTML = '<div class="titulo-cartao-escolha">Você escolheu:</div>'
+    exibicaoNumeroComputador.innerHTML = '<div class="titulo-cartao-escolha">Computador escolheu:</div>'
+
+    resultado.style.display = 'none'
     habilitarBotoes()
 }
